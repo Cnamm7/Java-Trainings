@@ -3,15 +3,18 @@ package main;
 import VolatileExercise.VolatileData;
 import VolatileExercise.VolatileThread;
 
-import static java.lang.Math.PI;
-import static java.lang.Math.max;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         runVolatile();
-        max(2, 7);
-        double a = PI;
+        String hello = "hello";
+        hello = hello.toUpperCase();
+        System.out.println(hello);
+        Character[] s = {'s', 'i', 'n', 'a'};
+        List<Character> si = Arrays.stream(s).toList();
+        si.forEach(System.out::println);
     }
 
     public static void runVolatile() throws InterruptedException {
@@ -30,7 +33,21 @@ public class Main {
         }
     }
 
-
+    public static void printOutDuplicateCharacters(String input) {
+        Map<Character, Integer> numberOfCharacter = new HashMap<>();
+        for (int i = 0; i < input.length(); i++) {
+            if (!numberOfCharacter.containsKey(input.charAt(i))) {
+                numberOfCharacter.put(input.charAt(i), 1);
+            } else {
+                numberOfCharacter.put(input.charAt(i), numberOfCharacter.get(input.charAt(i)) + 1);
+            }
+        }
+        for (char c : numberOfCharacter.keySet()) {
+            if (numberOfCharacter.get(c) > 1) {
+                System.out.println(c + ":" + numberOfCharacter.get(c));
+            }
+        }
+    }
 }
 
 

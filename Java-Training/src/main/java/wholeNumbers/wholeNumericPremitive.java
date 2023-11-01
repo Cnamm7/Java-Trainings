@@ -4,7 +4,7 @@ public class wholeNumericPremitive {
     public static void main(String[] args) {
         long max  = 12_123_145; // represent how we can write big numbers in Java
 
-        // octal (0 - 7)
+        // octal (0-7)
         int o1 = 012; // 10 in decimal
         int o2 = 045; // 37 in decimal
         int sumOct = o1 + o2; // 47 decimal
@@ -16,7 +16,7 @@ public class wholeNumericPremitive {
         int sumHex = h1 + h2; // 45 decimal
         System.out.println("firstDecimal= " + h1 + " secondDecimal= " + h2 + " hexSum= " + Integer.toHexString(sumHex));
 
-        // binary
+        // binary (0-1)
         int firstBin = 0b1001; // 9 decimal
         int secondBin = 0b0111; // 7 decimal
         int binSum = firstBin + secondBin; // 16 decimal
